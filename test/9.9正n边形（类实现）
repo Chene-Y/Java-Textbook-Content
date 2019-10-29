@@ -1,0 +1,86 @@
+//创建名为RegularPolygon的类
+public class RegularPolygon {
+
+	private int n = 3;
+	
+	private double side = 1;
+	
+//	final static double PI = 3.14;
+	
+	private double x = 0;
+	
+	private double y = 0;
+	//无参数构造方法
+	public RegularPolygon(){
+		
+	}
+	//指定边长和长度且中心在（0,0）的构造方法
+	public RegularPolygon(int n, double side){
+		this.n = n;
+		this.side = side;
+	}
+	//指定边长和长度且中心在（x,y）的构造方法
+	public RegularPolygon(int n, double side, double x, double y){
+		this.n = n;
+		this.side = side;
+		this.x = x;
+		this.y = y;	
+	}
+	//所有数据域的访问器
+	public int getN(){
+		return n;
+	}
+	
+	public double getSide(){
+		return side;
+	}
+	
+	public double getX(){
+		return x;
+	}
+	
+	public double getY(){
+		return y;
+	}
+	//所有数据域的修改器
+	public void setN(int n){
+		this.n = n;
+	}
+	
+	public void setSide(double side){
+		this.side = side;
+	}
+	
+	public void setX(double x){
+		this.x = x;
+	}
+	
+	public void setY(double y){
+		this.y = y;
+	}
+	
+	public double getPerimeter(){
+		return n * side;
+	}
+	
+	public double getArea(){
+		return n * side * side / (4 * Math.tan(Math.PI / n));
+	}
+	public void print(){
+		System.out.println("周长：" + getPerimeter() + " 面积：" + getArea());
+	}
+}
+//引用RegularPolygon类
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		RegularPolygon my0 = new RegularPolygon();
+		RegularPolygon my1 = new RegularPolygon(6,4);
+		RegularPolygon my2 = new RegularPolygon(10,4,5.6,7.8);
+		my0.print();
+		my1.print();
+		my2.print();
+	}
+
+}
